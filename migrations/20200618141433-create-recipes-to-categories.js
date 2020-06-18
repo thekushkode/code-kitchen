@@ -25,14 +25,22 @@ module.exports = {
           model: 'Categories',
           key: 'id'
         },
+      },
+      createdAt: {
+        allowNull: false,
+        type: Sequelize.DATE
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE
       }
     });
 
   },
 
   down: (queryInterface, Sequelize) => {
-    
-      return queryInterface.dropTable('RecipesCategories');
-    
+
+    return queryInterface.dropTable('RecipesCategories');
+
   }
 };

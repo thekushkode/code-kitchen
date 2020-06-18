@@ -6,12 +6,12 @@ module.exports = (sequelize, DataTypes) => {
     description: DataTypes.TEXT,
     url: DataTypes.TEXT,
     likes: DataTypes.INTEGER,
-    vegetraian: DataTypes.BOOLEAN,
+    vegetarian: DataTypes.BOOLEAN,
     vegan: DataTypes.BOOLEAN,
     glutenfree: DataTypes.BOOLEAN
   }, {});
   Recipes.associate = function (models) {
-    Recipes.belongsToMany(models.Categories, { through: 'RecipesCategories' });
+    Recipes.belongsToMany(models.Categories, { through: 'RecipesCategories', foreignKey: 'recipesId', otherKey: 'categoriesId' });
   };
   return Recipes;
 };

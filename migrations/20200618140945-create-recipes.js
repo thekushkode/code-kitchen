@@ -23,7 +23,7 @@ module.exports = {
       likes: {
         type: Sequelize.INTEGER
       },
-      vegetraian: {
+      vegetarian: {
         type: Sequelize.BOOLEAN
       },
       vegan: {
