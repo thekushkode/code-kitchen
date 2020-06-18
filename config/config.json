@@ -1,0 +1,17 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": null,
+    "database": "codekitchen",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "operatorsAliases": false
+  },
+  "scripts": {
+    "start": "node ./bin/www",
+    "sequelize-reset": "sequelize db:drop && sequelize db:create && sequelize db:migrate && sequelize db:seed:all"
+  },
+  "production": {
+    "use_env_variable": "DATABASE_URL"
+  }
+}
