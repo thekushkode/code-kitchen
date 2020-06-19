@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 //Todo: Put React App Here
-//app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'client/build')));
 
 app.use('/api/v1/', apiRouter);
 
@@ -26,6 +26,9 @@ app.use(function(req, res, next) {
   next(createError(404));
 });
 
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'client/build/index.html'))
+})
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
