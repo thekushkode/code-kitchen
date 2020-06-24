@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import LikesButton from './LikesButton';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -24,6 +25,7 @@ export default class RecipeDetails extends Component {
             })
     }
 
+
     render() {
         const { loading, details } = this.state;
 
@@ -40,15 +42,11 @@ export default class RecipeDetails extends Component {
                                 <Card.Title>{details.name}</Card.Title>
                                 <Card.Subtitle className="mb-2 text-muted">{details.description}</Card.Subtitle>
                                 <Card.Text>
-                                    Some quick example text to build on the card title and make up the bulk of
-                                    the card's content.
-                                        </Card.Text>
+                                    {details.review}
+                                </Card.Text>
                             </Card.Body>
                             <div className='d-flex'>
-                                <Button variant="danger" size="sm">Likes: {details.likes}</Button>
-                                <Button variant="secondary" size="sm">Vegetarian: {details.vegetarian}</Button>
-                                <Button variant="success" size="sm">Vegan: {details.vegan}</Button>
-                                <Button variant="info" size="sm">GF: {details.glutenfree}</Button>
+                                <LikesButton id={details.id} />
                             </div>
                         </Card>
                     </Col>

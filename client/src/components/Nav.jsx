@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
+import { Link } from 'react-router-dom';
 
 class Navi extends Component {
     render() {
         return (
             <Navbar bg="light" variant="light">
-                <Navbar.Brand href="#home">Code Kitchen</Navbar.Brand>
+                <Navbar.Brand href="/">Code Kitchen</Navbar.Brand>
                 <Nav className="mr-auto">
-                    <Nav.Link href="#home">Home</Nav.Link>
-                    <Nav.Link href="#features">Recipes</Nav.Link>
-                    <Nav.Link href="#pricing">Recipe Details</Nav.Link>
+                    <Link to='/'><Nav.Link href="/">Recipes</Nav.Link></Link>
+                    <Link to='/recipes/new'><Nav.Link href="/recipes/new">Add Recipe</Nav.Link></Link>
                 </Nav>
             </Navbar>
         )
